@@ -3,13 +3,12 @@ import random
 def introduction():
     print("Welcome to my Program 2 - Guess The Number!")
 
-def lottery():
+def guesstheNumber():
     generatedNumber = random.randint(0,100)
-    print(f"{generatedNumber}")
     count = 0
     while True:
         try:
-            userNumber = int(input("Input number: ")) 
+            userNumber = int(input("Input your number: ")) 
         except ValueError:
             print("Sorry, I didn't understand that.")
             continue
@@ -26,9 +25,13 @@ def lottery():
             print(f"You tried {count} times.")
             break
 
+def goodbye():
+    print()
+    print("Thank you for using my program!")
 
 introduction()
-lottery()
+guesstheNumber()
+goodbye()
 
     
     
