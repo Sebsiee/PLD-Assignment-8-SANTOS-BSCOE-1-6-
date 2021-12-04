@@ -27,6 +27,19 @@ def lottery():
         print("You won!")
     else:
         print("You lost.")
+    while True:
+        tryAgain = str(input("Try again y/n "))
+        if tryAgain == "Y" or tryAgain == "y":
+            print("Goodluck!")
+            lottery()       
+            break   
+        elif tryAgain == "N" or tryAgain == "n":
+            print("Try again next time!")
+            break
+        else:
+            print("Sorry, I didn't understand that.")
+            continue
+
 
 introduction()
 lottery()
