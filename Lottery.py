@@ -65,6 +65,10 @@ def lottery():
             print("Sorry, I didn't understand that.")
             continue
 
+def goodbye():
+    print()
+    print("Thank you for using my program!")
 
 introduction()
 lottery()
+goodbye()
