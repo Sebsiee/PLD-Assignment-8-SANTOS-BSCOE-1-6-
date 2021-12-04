@@ -7,9 +7,27 @@ def lottery():
     firstLottery = random.randint(0,9)
     secondLottery = random.randint(0,9)
     thirdLottery = random.randint(0,9)
-    firstGuess = int(input("Input 1st Number: "))
-    secondGuess = int(input("Input 2nd Number: "))
-    thirdGuess = int(input("Input 3rd Number: "))
+    while True:
+            try:
+                firstGuess = int(input("Input 1st Number: "))
+            except ValueError:
+                print("Sorry, I didn't understand that.")
+                continue
+            break
+    while True:
+            try:
+                secondGuess = int(input("Input 2nd Number: "))
+            except ValueError:
+                print("Sorry, I didn't understand that.")
+                continue
+            break
+    while True:
+            try:
+                thirdGuess = int(input("Input 3rd Number: "))
+            except ValueError:
+                print("Sorry, I didn't understand that.")
+                continue
+            break
     if int(firstGuess) == firstLottery or int(firstGuess) == secondLottery or int(firstGuess) == thirdLottery:
         fg1 = 1
     else:
@@ -25,10 +43,17 @@ def lottery():
     points = fg1 + fg2 + fg3
     if points == 3:
         print("You won!")
+    elif points == 2:
+        print("You guessed 2 numbers correctly. So close!")
+        print(f"The winning numbers are: {firstLottery}, {secondLottery} & {thirdLottery}")
+    elif points == 1:
+        print("You guessed 1 correctly.")
+        print(f"The winning numbers are: {firstLottery}, {secondLottery} & {thirdLottery}")
     else:
         print("You lost.")
+        print(f"The winning numbers are: {firstLottery}, {secondLottery} & {thirdLottery}")
     while True:
-        tryAgain = str(input("Try again y/n "))
+        tryAgain = str(input("Would you like to try again? \nY/N: "))
         if tryAgain == "Y" or tryAgain == "y":
             print("Goodluck!")
             lottery()       
