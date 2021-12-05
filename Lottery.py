@@ -4,9 +4,18 @@ def introduction():
     print("Welcome to my Program 1 - Lottery!")
 
 def lottery():
-    firstLottery = random.randint(0,9)
-    secondLottery = random.randint(0,9)
-    thirdLottery = random.randint(0,9)
+    while True:
+        firstLottery = random.randint(0,9)
+        secondLottery = random.randint(0,9)
+        thirdLottery = random.randint(0,9)
+        if firstLottery == secondLottery or firstLottery == thirdLottery:
+            continue
+        elif secondLottery == firstLottery or secondLottery == thirdLottery:
+            continue
+        elif thirdLottery == firstLottery or thirdLottery == secondLottery:
+            continue
+        else:
+            break
     while True:
             try:
                 firstGuess = int(input("Input 1st Number: "))
